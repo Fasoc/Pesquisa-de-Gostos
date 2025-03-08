@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Quiz</title>
+    <style>
+        .erro { color: red; }
+    </style>
+</head>
+<body>
+
+<h1>Quiz de Conhecimentos Gerais</h1>
+
+<form id="quizForm">
+    <label for="nome">Qual é o seu nome?</label><br>
+    <input type="text" id="nome" name="nome" required><br><br>
+
+    <label>Qual a sua cor favorita?</label><br>
+    <input type="radio" id="vermelho" name="cor" value="vermelho">
+    <label for="vermelho">Vermelho</label>
+    <input type="radio" id="azul" name="cor" value="azul">
+    <label for="azul">Azul</label>
+    <input type="radio" id="verde" name="cor" value="verde">
+    <label for="verde">Verde</label><br><br>
+
+    <label>Quais dessas frutas você gosta? (Selecione todas as opções que se aplicam)</label><br>
+    <input type="checkbox" id="maca" name="frutas" value="maçã">
+    <label for="maca">Maçã</label>
+    <input type="checkbox" id="banana" name="frutas" value="banana">
+    <label for="banana">Banana</label>
+    <input type="checkbox" id="laranja" name="frutas" value="laranja">
+    <label for="laranja">Laranja</label><br><br>
+
+    <button type="submit">Enviar</button>
+</form>
+
+<div id="resultado"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
