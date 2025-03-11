@@ -1,34 +1,33 @@
 document.getElementById('quizForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Impede o envio do formulário para realizar a validação
+    event.preventDefault(); 
 
-    // Capturar as respostas
     const nome = document.getElementById('nome').value;
     const cor = document.querySelector('input[name="cor"]:checked');
     const frutas = document.querySelectorAll('input[name="frutas"]:checked');
-
-    // Validar as respostas
+    const filme = document.querySelector('input[name="filme"]:checked');
+    const musica = document.querySelector('input[name="musica"]:checked');
+    const trilogia = document.querySelector('input[name="trilogia"]:checked');
+    const temaMusica = document.querySelector('input[name="temaMusica"]:checked');
+    const joker = document.querySelector('input[name="joker"]:checked');
+    
     let erro = false;
     let mensagemErro = "";
 
-    // Verificar se o nome foi preenchido
     if (!nome) {
         erro = true;
         mensagemErro += "Por favor, preencha seu nome.<br>";
     }
 
-    // Verificar se uma cor foi selecionada
-    if (!cor) {
+    if (!cor || !filme || !musica || !trilogia || !temaMusica || !joker) {
         erro = true;
-        mensagemErro += "Por favor, selecione uma cor favorita.<br>";
+        mensagemErro += "Por favor selecione um resposta para todas as perguntas.<br>";
     }
 
-    // Verificar se pelo menos uma fruta foi escolhida
     if (frutas.length === 0) {
         erro = true;
-        mensagemErro += "Por favor, selecione pelo menos uma fruta.<br>";
+        mensagemErro += "Por favor selecione pelo menos uma fruta.<br>";
     }
 
-    // Exibir mensagens de erro ou resultado
     const resultadoDiv = document.getElementById('resultado');
     if (erro) {
         resultadoDiv.innerHTML = "<div class='erro'>" + mensagemErro + "</div>";
@@ -36,6 +35,20 @@ document.getElementById('quizForm').addEventListener('submit', function(event) {
         let frutasEscolhidas = Array.from(frutas).map(f => f.value).join(", ");
         resultadoDiv.innerHTML = `<p>Obrigado por participar, ${nome}!</p>
                                   <p>Sua cor favorita é: ${cor.value}</p>
-                                  <p>Você gosta das frutas: ${frutasEscolhidas}</p>`;
+                                  <p>Você gosta da(s) fruta(s): ${frutasEscolhidas}</p>
+                                  <p>Seu filme favorito da Marvel é: ${filme.value}</p>
+                                  <p>O cantor que você mais gosta de escutar é: ${musica.value}</p>
+                                  <p>Você mais gosta da trilogia: ${trilogia.value}</p>
+                                  <p>A música que você colocaria num jantar romântico é: ${temaMusica.value}</p>
+                                  <p>O intérprete do Coringa que mais te marcou foi: ${joker.value}</p>`;
     }
+
+    resultadoDiv.style.display = 'block';
+
+});
+
+    document.getElementById('nome').addEventListener('input', function() {
+        let nome = this.value;
+    
+        this.value = nome.charAt(0).toUpperCase() + nome.slice(1).toLowerCase();
 });

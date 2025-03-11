@@ -3,39 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Quiz</title>
-    <style>
-        .erro { color: red; }
-    </style>
+    <title>Pesquisa de Gostos Pessoais</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<h1>Quiz de Conhecimentos Gerais</h1>
+<h1>Pesquisa de Gostos Pessoais</h1>
 
 <form id="quizForm">
     <label for="nome">Qual é o seu nome?</label><br>
-    <input type="text" id="nome" name="nome" required><br><br>
+    <input type="text" id="nome" name="Nome" required><br><br>
 
     <label>Qual a sua cor favorita?</label><br>
-    <input type="radio" id="vermelho" name="cor" value="vermelho">
+    <input type="radio" id="vermelho" name="cor" value="Vermelho">
     <label for="vermelho">Vermelho</label>
-    <input type="radio" id="azul" name="cor" value="azul">
+    <input type="radio" id="azul" name="cor" value="Azul">
     <label for="azul">Azul</label>
-    <input type="radio" id="verde" name="cor" value="verde">
+    <input type="radio" id="verde" name="cor" value="Verde">
     <label for="verde">Verde</label><br><br>
 
     <label>Quais dessas frutas você gosta? (Selecione todas as opções que se aplicam)</label><br>
-    <input type="checkbox" id="maca" name="frutas" value="maçã">
+    <input type="checkbox" id="maca" name="frutas" value="Maçã">
     <label for="maca">Maçã</label>
-    <input type="checkbox" id="banana" name="frutas" value="banana">
+    <input type="checkbox" id="banana" name="frutas" value="Banana">
     <label for="banana">Banana</label>
-    <input type="checkbox" id="laranja" name="frutas" value="laranja">
+    <input type="checkbox" id="laranja" name="frutas" value="Laranja">
     <label for="laranja">Laranja</label><br><br>
+
+    <label>Qual é o seu filme favorito da Marvel?</label><br>
+    <input type="radio" id="avengers" name="filme" value="Vingadores: Ultimato">
+    <label for="avengers">Vingadores: Ultimato</label>
+    <input type="radio" id="ironman" name="filme" value="Homem de Ferro">
+    <label for="ironman">Homem de Ferro</label>
+    <input type="radio" id="spiderman" name="filme" value="Homem-Aranha: Sem Volta Para Casa">
+    <label for="spiderman">Homem-Aranha: Sem Volta Para Casa</label><br><br>
+
+    <label>Qual o cantor que você mais gosta de escutar?</label><br>
+    <input type="radio" id="edSheeran" name="musica" value="Ed Sheeran">
+    <label for="edSheeran">Ed Sheeran</label>
+    <input type="radio" id="justinBieber" name="musica" value="Justin Bieber">
+    <label for="justinBieber">Justin Bieber</label>
+    <input type="radio" id="brunoMars" name="musica" value="Bruno Mars">
+    <label for="brunoMars">Bruno Mars</label><br><br>
+
+    <label>Qual a trilogia de filmes que você mais gosta?</label><br>
+    <input type="radio" id="lotr" name="trilogia" value="O Senhor dos Anéis">
+    <label for="lotr">O Senhor dos Anéis</label>
+    <input type="radio" id="starWars" name="trilogia" value="Star Wars">
+    <label for="starWars">Star Wars</label>
+    <input type="radio" id="matrix" name="trilogia" value="Matrix">
+    <label for="matrix">Matrix</label><br><br>
+
+    <label>Qual música você colocaria num jantar romântico?</label><br>
+    <input type="radio" id="myHeartWillGoOn" name="temaMusica" value="My Heart Will Go On">
+    <label for="myHeartWillGoOn">My Heart Will Go On</label>
+    <input type="radio" id="powerOfLove" name="temaMusica" value="The Power of Love">
+    <label for="powerOfLove">The Power of Love</label>
+    <input type="radio" id="unchainedMelody" name="temaMusica" value="Unchained Melody">
+    <label for="unchainedMelody">Unchained Melody</label><br><br>
+
+    <label>Quem mais te marcou como intérprete de Coringa da DC?</label><br>
+    <input type="radio" id="joaquinPhoenix" name="joker" value="Joaquín Phoenix">
+    <label for="joaquinPhoenix">Joaquín Phoenix</label>
+    <input type="radio" id="heathLedger" name="joker" value="Heath Ledger">
+    <label for="heathLedger">Heath Ledger</label>
+    <input type="radio" id="jackNicholson" name="joker" value="Jack Nicholson">
+    <label for="jackNicholson">Jack Nicholson</label><br><br>
 
     <button type="submit">Enviar</button>
 </form>
 
-<div id="resultado"></div>
+<div id="resultado" style= "display: none;"></div>
 
 <script src="script.js"></script>
 </body>
